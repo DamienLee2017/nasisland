@@ -93,19 +93,26 @@ const NASCommunity = () => {
               onClick={() => setActiveTab('forum')}
               className={`flex items-center ${activeTab === 'forum' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-500'}`}
             >
-              <MessageSquare className="h-5 w-5 mr-1" /> 论坛
+              <MessageSquare className="h-5 w-5 mr-1" /> 交流区
             </button>
             <button 
               onClick={() => setActiveTab('resources')}
               className={`flex items-center ${activeTab === 'resources' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-500'}`}
             >
-              <Download className="h-5 w-5 mr-1" /> 资源
+              <Download className="h-5 w-5 mr-1" /> 资源区
             </button>
             <button 
               onClick={() => setActiveTab('community')}
               className={`flex items-center ${activeTab === 'community' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-500'}`}
             >
-              <Users className="h-5 w-5 mr-1" /> 社区
+              <Users className="h-5 w-5 mr-1" /> 开发区
+            </button>
+
+            <button 
+              onClick={() => setActiveTab('transaction')}
+              className={`flex items-center ${activeTab === 'transaction' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-500'}`}
+            >
+              <HardDrive className="h-5 w-5 mr-1" /> 交易区
             </button>
           </div>
           
@@ -156,7 +163,7 @@ const NASCommunity = () => {
                 }}
                 className={`flex items-center py-2 px-3 rounded-lg ${activeTab === 'forum' ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100'}`}
               >
-                <MessageSquare className="h-5 w-5 mr-3" /> 论坛
+                <MessageSquare className="h-5 w-5 mr-3" /> 交流区
               </button>
               <button 
                 onClick={() => {
@@ -165,7 +172,7 @@ const NASCommunity = () => {
                 }}
                 className={`flex items-center py-2 px-3 rounded-lg ${activeTab === 'resources' ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100'}`}
               >
-                <Download className="h-5 w-5 mr-3" /> 资源
+                <Download className="h-5 w-5 mr-3" /> 资源区
               </button>
               <button 
                 onClick={() => {
@@ -174,7 +181,17 @@ const NASCommunity = () => {
                 }}
                 className={`flex items-center py-2 px-3 rounded-lg ${activeTab === 'community' ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100'}`}
               >
-                <Users className="h-5 w-5 mr-3" /> 社区
+                <Users className="h-5 w-5 mr-3" /> 开发区
+              </button>
+
+              <button 
+                onClick={() => {
+                  setActiveTab('transaction');
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`flex items-center py-2 px-3 rounded-lg ${activeTab === 'community' ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100'}`}
+              >
+                <HardDrive className="h-5 w-5 mr-3" /> 交易区
               </button>
               
               <div className="relative pt-2">
@@ -354,8 +371,15 @@ const NASCommunity = () => {
 
         {activeTab === 'community' && (
           <div className="bg-white rounded-xl shadow-sm p-6">
-            <h2 className="text-xl font-semibold mb-6">社区成员</h2>
-            <p className="text-gray-600">社区功能开发中...</p>
+            <h2 className="text-xl font-semibold mb-6">开发者中心</h2>
+            <p className="text-gray-600">软件开发者功能开发中...</p>
+          </div>
+        )}
+
+      {activeTab === 'transaction' && (
+          <div className="bg-white rounded-xl shadow-sm p-6">
+            <h2 className="text-xl font-semibold mb-6">交易中心</h2>
+            <p className="text-gray-600">交易区功能开发中...</p>
           </div>
         )}
       </main>
